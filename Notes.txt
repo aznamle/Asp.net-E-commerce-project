@@ -1,0 +1,6 @@
+<asp:SqlDataSource ID="SqlDSMainCategory" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="SELECT * FROM [Category] WHERE parent = 0" runat="server"></asp:SqlDataSource>
+<asp:Repeater ID="rpMainCategory" runat="server" DataSourceID="SqlDSMainCategory">
+	<ItemTemplate>
+		<li><a href="Category.aspx?MainCategoryId=<%# Eval("ID")%>&MainCategoryName=<%# Trim(Eval("CategoryName"))%>"><%# Trim(Eval("CategoryName"))%></a></li>
+	</ItemTemplate>
+</asp:Repeater>
